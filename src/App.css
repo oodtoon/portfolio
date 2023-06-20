@@ -1,0 +1,173 @@
+/* Nav */
+
+.nav {
+  text-align: center;
+}
+nav a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 0.75em;
+  font-weight: 700;
+  line-height: 64px;
+}
+
+/* Home */
+
+.quote-content {
+  display: grid;
+  margin: auto;
+  align-items: center;
+  justify-items: center;
+  height: 100vh;
+  max-width: 60%;
+}
+
+.quote-container {
+  display: grid;
+  padding: 5em;
+  border-radius: 4px;
+  justify-items: center;
+}
+
+.author {
+  font-weight: bold;
+}
+
+/* About */
+
+.about {
+  display: grid;
+  margin: 2em;
+  justify-content: center;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "about-title about-img" "about-msg about-img";
+}
+
+.about-title {
+  grid-area: about-title;
+}
+
+.about-img {
+  grid-area: about-img;
+}
+
+.about-msg {
+  grid-area: about-msg;
+}
+
+/* About Skills */
+
+.skills-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 2em;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-radius: 4px;
+}
+
+.skill {
+  align-self: center;
+}
+
+/* About objective */
+
+.objective-container {
+  display: grid;
+  margin: 2em;
+}
+
+/* About interests */
+
+.interests-container {
+  display: grid;
+  margin: 2em;
+}
+
+/* Contact */
+
+.contact {
+  display: grid;
+  margin: auto;
+  place-content: center;
+  justify-items: center;
+  height: 100vh;
+}
+
+.contact-info {
+  display: grid;
+  justify-items: center;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 4px;
+}
+
+.contact-types {
+  margin: 1em;
+}
+
+.social-link {
+  color: black;
+  font-size: 2em;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+/* projects */
+
+.projects-container {
+  display: grid;
+  padding: 5% 10% 10% 10%;
+  grid-template-rows: 1fr 5fr;
+  min-height: 100vh;
+  justify-items: center;
+}
+
+.projects-grid {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1em;
+}
+
+.project-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orangered;
+  border: solid 3px black;
+  border-radius: 4px;
+
+  &.medium {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+
+  &.large {
+    grid-row: span 3;
+    grid-column: span 3;
+  }
+
+  &.tall {
+    grid-column: 4 / span 2;
+    grid-row: 4 / span 3;
+  }
+
+  &.wide {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+}
+
+/* Footer */
+
+.footer-container {
+  background-color: black;
+  color: white;
+}
