@@ -1,7 +1,7 @@
 const darkPallete = {
     primary: {
       main: "#000",
-      contrastText: "#000",
+      contrastText: "#FFF",
     },
 
     outlined: {

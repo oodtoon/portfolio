@@ -6,7 +6,6 @@ import About from "./components/routes/About";
 import Contact from "./components/routes/Contact";
 import Projects from "./components/routes/Projects";
 
-
 import { darkPallete, lightPallete } from "./palletes";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -15,6 +14,10 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 import "./App.css";
+import Chess from "./components/routes/Chess";
+import Sales from "./components/routes/Sales";
+import ScriptOrganizer from "./components/routes/ScriptOrganizer";
+import Euchre from "./components/routes/Euchre";
 
 function App() {
   let darkMode = JSON.parse(localStorage.getItem("theme"));
@@ -65,12 +68,19 @@ function App() {
             },
           },
         },
+        MuiSwitch: {
+          styleOverrides: {
+            root: {
+              color: pallete.primary.main,
+            },
+          },
+        },
       },
     });
   }, [isDarkMode]);
 
   return (
-    <div>
+    <div class="page">
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Router>
@@ -84,6 +94,10 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/chess" element={<Chess />} />
+              <Route path="/sales" element={<Sales />} />
+              <Route path="/scriptorganizer" element={<ScriptOrganizer />} />
+              <Route path="euchre" element={<Euchre />} />
             </Routes>
           </Container>
           <Footer />

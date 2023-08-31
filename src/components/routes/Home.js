@@ -46,18 +46,40 @@ const Home = () => {
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * quotes.length);
+
     setQuote(quotes[randomIndex]);
   }, []);
 
   return (
-    <>
+    <div>
       <Box className="quote-content">
         <Box className="quote-container" style={borderStyle}>
           <em className="quote">{quote[0]}</em>
           <div className="author">{quote[1]}</div>
         </Box>
       </Box>
-    </>
+      <Box class="home-msg">
+        <p>Hi there, stranger! Welcome to my webiste!</p>
+        <p>
+          If there is one thing I have learned on my journey for learning to
+          code, it's that you're capable of doing amazing things. More than you
+          could even know.{" "}
+        </p>
+        <p>
+          I built this to showcase my dev skills and hopefully land my first
+          junior dev role. The design in minimalistic to hopefully make my{" "}
+          <a href="/projects">apps</a> stand out. 
+        </p>
+        <p>
+          Anyways, make yourself at home and feel free to poke around. If you
+          think I might be a good fit for your dev team,{" "}
+          <a href="/contact">reach out</a>, and if not, I at least hope you got
+          your spirits lifted with a small inspirtaional quote. Whatever your
+          journey, keep going! I'm sure you're doing great!
+        </p>
+        <p>-B</p>
+      </Box>
+    </div>
   );
 };
 

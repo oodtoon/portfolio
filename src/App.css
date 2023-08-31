@@ -1,3 +1,9 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Nav */
 
 .nav {
@@ -15,14 +21,13 @@ nav a {
 
 .quote-content {
   display: grid;
-  margin: auto;
-  align-items: center;
-  justify-items: center;
-  height: 100vh;
+  grid-template-areas: "quote" "msg";
+  margin: 5em auto;
   max-width: 60%;
 }
 
 .quote-container {
+  grid-area: quote;
   display: grid;
   padding: 5em;
   border-radius: 4px;
@@ -33,13 +38,19 @@ nav a {
   font-weight: bold;
 }
 
+.home-msg {
+  grid-area: msg;
+  max-width: 800px;
+  margin: auto;
+}
+
 /* About */
 
 .about {
   display: grid;
   margin: 2em;
   justify-content: center;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
   grid-template-areas: "about-title about-img" "about-msg about-img";
 }
 
@@ -66,12 +77,14 @@ nav a {
 .skill-items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   border-radius: 4px;
 }
 
 .skill {
+  margin: 1em;
   align-self: center;
+  font-weight: bolder;
 }
 
 /* About objective */
@@ -88,14 +101,21 @@ nav a {
   margin: 2em;
 }
 
+.interests > div {
+  margin: 1em;
+}
+
+.interests > div > span {
+  font-weight: bolder;
+}
+
 /* Contact */
 
 .contact {
   display: grid;
-  margin: auto;
+  margin: 5em;
   place-content: center;
   justify-items: center;
-  height: 100vh;
 }
 
 .contact-info {
@@ -108,6 +128,10 @@ nav a {
 
 .contact-types {
   margin: 1em;
+}
+
+.contact-types > div {
+  font-weight: bolder;
 }
 
 .social-link {
@@ -167,7 +191,24 @@ nav a {
 
 /* Footer */
 
+footer {
+  margin-top: auto;
+}
+
 .footer-container {
   background-color: black;
   color: white;
+  padding: 3rem;
+  width: 100%;
+}
+
+/* Challenges */
+
+.challenge {
+  margin-bottom: 1em;
+}
+
+.challenge-title {
+  font-size: 1.2em;
+  font-weight: bold;
 }
