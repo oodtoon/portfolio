@@ -25,6 +25,10 @@ const lightPallete = {
     background: {
       default: "#FFF",
     },
+    a: {
+      main: "#0000EE",
+      secondary: "#551A8B"
+    }
   };
 
   export default lightPallete

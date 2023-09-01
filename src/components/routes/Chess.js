@@ -1,4 +1,5 @@
 import ProjectDescription from "../ProjectDescription";
+import chess from "../../static/chess.png"
 
 const introParagraphs = [
   {
@@ -19,9 +20,9 @@ const challenges = [
       "This was the first time I ever used OOP. It was a great introduction into understanding the use cases of objects and how they can interract with each other.",
   },
   {
-    title: "Svelte and migration",
+    title: "Svelte and Migration",
     solution:
-      "Initially, this app was built using web components. However, later when we introducted routing with Svelte, we thought we should just migrate  everything to Svelte. I not only hadto learn Svelte, but I also had to do an entire app migration from web components to Svelte. What did I learn? Move fast and break things.",
+      "Initially, this app was built using web components. However, later when we introducted routing with Svelte, we thought we should just migrate  everything to Svelte. I not only had to learn Svelte, but I also had to do an entire app migration from web components to Svelte. What did I learn? Move fast and break things.",
   },
   {
     title: "TypeScript",
@@ -46,13 +47,16 @@ const challenges = [
 ];
 
 const Chess = () => {
+
   return (
     <>
       <ProjectDescription
         title="Chess"
         introParagraphs={introParagraphs}
         challenges={challenges}
+        img={chess}
       />
+     
     </>
   );
 };

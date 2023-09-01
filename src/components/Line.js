@@ -1,8 +1,10 @@
+import Link from '@mui/material/Link';
+
 const Line = (props) => {
   return (
     <>
       <p>
-        {props.paragraph} {props.anchor && <a href={props.anchor}>here.</a>}
+        {props.paragraph} {props.anchor && <Link color="a.main"  href={props.anchor}>here.</Link>}
       </p>
     </>
   );

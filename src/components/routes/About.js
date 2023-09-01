@@ -2,6 +2,8 @@ import { Box } from "@mui/system";
 import { useTheme } from "@emotion/react";
 import "../../App.css";
 
+import Link from '@mui/material/Link';
+
 const About = () => {
   const theme = useTheme();
 
@@ -41,16 +43,16 @@ const About = () => {
           <p>
             A role where I can help by building out either web pages or an internet application. I'd also love to be part of a supportive team that can get me up to speed with their current technologies and give feedback on my code so I can improve it to the necessary standard.
           </p>
-          <p>In need of a junior dev to join your team? Do I have the tools and the mindset you're looking for? <a href="/contact">Contact me!</a></p>
+          <p>In need of a junior dev to join your team? Do I have the tools and the mindset you're looking for? <Link href="/contact" color="a.main">Contact me!</Link></p>
         </Box>
       </Box>
 
       <Box className="interests-container">
         <h1>My Interests</h1>
-        <Box class="interests">
+        <Box className="interests">
           <div><span>Coding</span> - Since I have started building projects I haven't been able to put the computer down. I don't know why, I just find the ability to manipulate pixels on the screen so cool and rewarding.</div>
-          <div><span>Pool</span>- I'm pretty good at pool...billiards that is. Think you can beat me? </div>
-          <div><span>YouTube</span>- I started a YouTube channel because I thought the world of pool was missing personality. Check out some jokes and even some cool trick shots on my channel! Oh, and please like and subscirbe!</div>
+          <div><span>Pool</span> - I'm pretty good at pool...billiards that is. Think you can beat me? </div>
+          <div><span>YouTube</span> - I started a YouTube channel because I thought the world of pool was missing personality. Check out some jokes and even some cool trick shots on my channel! Oh, and please like and subscirbe!</div>
         </Box>
       </Box>
     </>

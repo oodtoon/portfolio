@@ -3,7 +3,6 @@ const darkPallete = {
       main: "#000",
       contrastText: "#FFF",
     },
-
     outlined: {
       main: "#000",
       contrastText: "#FFF",
@@ -25,6 +24,10 @@ const darkPallete = {
     background: {
       default: "#000",
     },
+    a: {
+      main: "#ff4500",
+      secondary: "#ff8f66"
+    }
   };
 
   export default darkPallete

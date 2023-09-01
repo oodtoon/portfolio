@@ -18,6 +18,8 @@ import Chess from "./components/routes/Chess";
 import Sales from "./components/routes/Sales";
 import ScriptOrganizer from "./components/routes/ScriptOrganizer";
 import Euchre from "./components/routes/Euchre";
+import Snake from "./components/routes/Snake";
+import ScoreBoard from "./components/routes/ScoreBoard";
 
 function App() {
   let darkMode = JSON.parse(localStorage.getItem("theme"));
@@ -50,7 +52,7 @@ function App() {
             root: {
               color: pallete.outlined.contrastText,
               backgroundColor: pallete.outlined.main,
-            },
+            }, 
           },
         },
         MuiButton: {
@@ -80,29 +82,33 @@ function App() {
   }, [isDarkMode]);
 
   return (
-    <div class="page">
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Router>
-          <Nav
-            handleDarkModeToggle={handleDarkModeToggle}
-            isDarkMode={isDarkMode}
-          />
-          <Container>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/chess" element={<Chess />} />
-              <Route path="/sales" element={<Sales />} />
-              <Route path="/scriptorganizer" element={<ScriptOrganizer />} />
-              <Route path="euchre" element={<Euchre />} />
-            </Routes>
-          </Container>
-          <Footer />
-        </Router>
-      </ThemeProvider>
+    <div>
+      <div className="page">
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Router>
+            <Nav
+              handleDarkModeToggle={handleDarkModeToggle}
+              isDarkMode={isDarkMode}
+            />
+            <Container>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/chess" element={<Chess />} />
+                <Route path="/sales" element={<Sales />} />
+                <Route path="/scriptorganizer" element={<ScriptOrganizer />} />
+                <Route path="/euchre" element={<Euchre />} />
+                <Route path="/snake" element={<Snake />}/>
+                <Route path="/scoreboard" element={<ScoreBoard />}/>
+              </Routes>
+            </Container>
+            <Footer />
+          </Router>
+        </ThemeProvider>
+      </div>
     </div>
   );
 }

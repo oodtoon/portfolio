@@ -66,12 +66,14 @@ const Nav = (props) => {
             </NavLink>
           </nav>
 
-          <Switch
-            onClick={props.handleDarkModeToggle}
-            checked={props.isDarkMode}
-          >
-            Dark Mode
-          </Switch>
+          <span className="switch">
+            <Switch
+              onClick={props.handleDarkModeToggle}
+              checked={props.isDarkMode}
+            >
+              Dark Mode
+            </Switch>
+          </span>
         </Toolbar>
       </AppBar>
       <Toolbar />

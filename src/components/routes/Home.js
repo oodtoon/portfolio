@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import "../../App.css";
 import { useTheme } from "@emotion/react";
 
+import Link from '@mui/material/Link';
+
 const quotes = [
   [
     "“All our dreams can come true, if we have the courage to pursue them.”",
@@ -68,12 +70,12 @@ const Home = () => {
         <p>
           I built this to showcase my dev skills and hopefully land my first
           junior dev role. The design in minimalistic to hopefully make my{" "}
-          <a href="/projects">apps</a> stand out. 
+          <Link href="/projects" color="a.main">apps</Link> stand out. 
         </p>
         <p>
           Anyways, make yourself at home and feel free to poke around. If you
           think I might be a good fit for your dev team,{" "}
-          <a href="/contact">reach out</a>, and if not, I at least hope you got
+          <Link href="/contact" color="a.main">reach out</Link>, and if not, I at least hope you got
           your spirits lifted with a small inspirtaional quote. Whatever your
           journey, keep going! I'm sure you're doing great!
         </p>

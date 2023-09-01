@@ -17,6 +17,10 @@ nav a {
   line-height: 64px;
 }
 
+.switch {
+  margin-left: auto;
+}
+
 /* Home */
 
 .quote-content {
@@ -164,9 +168,10 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: orangered;
+  background-color: #ff4500;
   border: solid 3px black;
   border-radius: 4px;
+  cursor: pointer;
 
   &.medium {
     grid-row: span 2;
@@ -189,6 +194,31 @@ nav a {
   }
 }
 
+
+/* Challenges */
+
+.challenge {
+  margin-bottom: 1em;
+}
+
+.challenge-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Project Banners */
+
+.banner {
+  border: 3px black solid;
+  border-radius: 4px;
+  width: 100%;
+  padding: 6em;
+  margin-bottom: 5em;
+  color: transparent;
+  background-color: #ff4500;
+  cursor: pointer;
+}
+
 /* Footer */
 
 footer {
@@ -202,13 +232,4 @@ footer {
   width: 100%;
 }
 
-/* Challenges */
 
-.challenge {
-  margin-bottom: 1em;
-}
-
-.challenge-title {
-  font-size: 1.2em;
-  font-weight: bold;
-}
