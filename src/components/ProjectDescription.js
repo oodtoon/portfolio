@@ -7,33 +7,26 @@ const ProjectDescription = (props) => {
   const theme = useTheme();
 
   const borderStyle = {
-    backgroundImg: `${props.img}`,
-    backgroundSize: 'cover',
     border:
       theme.palette.mode === "dark" ? "solid 3px white" : "solid 3px black",
   };
-
 
   return (
     <>
       <h1>{props.title}</h1>
       <div>
-        {props.introParagraphs.map((paragraph, index) =>
+        {props.introParagraphs.map((paragraph) =>
           paragraph.anchor ? (
             <>
               {" "}
               <Line
                 paragraph={paragraph.line}
                 anchor={paragraph.anchor}
-                key={index}
+                key={paragraph.id}
               />
-            
             </>
           ) : (
-            <Line
-              key={index}
-              paragraph={paragraph.line}
-            />
+            <Line key={paragraph.id} paragraph={paragraph.line} />
           )
         )}
       </div>
@@ -41,20 +34,20 @@ const ProjectDescription = (props) => {
       <p></p>
       <h2>Challenges and What I Learned</h2>
       <ul>
-        {props.challenges.map((challenge, index) =>
+        {props.challenges.map((challenge) =>
           challenge.anchor ? (
-            <li className="challenge" key={index}>
+            <li className="challenge" key={challenge.id}>
               <ChallengeDescription
-                key={index}
+                key={challenge.id}
                 title={challenge.title}
                 solution={challenge.solution}
                 anchor={challenge.anchor}
               />
             </li>
           ) : (
-            <li className="challenge" key={index}>
+            <li className="challenge" key={challenge.id}>
               <ChallengeDescription
-                key={index}
+                key={challenge.id}
                 title={challenge.title}
                 solution={challenge.solution}
               />
@@ -63,7 +56,10 @@ const ProjectDescription = (props) => {
         )}
         <br />
       </ul>
-      <button className="banner" style={borderStyle} />
+      <button
+        className="banner"
+        style={{ borderStyle, backgroundImage: `url(${props.img})` }}
+      />
     </>
   );
 };

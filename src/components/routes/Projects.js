@@ -2,6 +2,9 @@ import { Box } from "@mui/material";
 import { useTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "../../App.css";
+import chess from "../../static/testProject.png"
+import vsp from "../../static/VSP.png"
+import script from "../../static/script.png"
 
 
 const Projects = () => {
@@ -25,14 +28,14 @@ const Projects = () => {
           <button
             onClick={() => toProject("/sales")}
             className="project-item medium"
-            style={borderStyle}
+            style={{...borderStyle, backgroundImage: `url(${vsp})`}}
           >
             Sales
           </button>
           <button
             onClick={() => toProject("/chess")}
             className="project-item large"
-            style={borderStyle}
+            style={{...borderStyle, backgroundImage: `url(${chess})`}}
           >
             Chess
           </button>
@@ -60,7 +63,7 @@ const Projects = () => {
           <div
             onClick={() => toProject("/scriptorganizer")}
             className="project-item wide"
-            style={borderStyle}
+            style={{...borderStyle, backgroundImage: `url(${script})`}}
           >
             Script Organizer
           </div>
