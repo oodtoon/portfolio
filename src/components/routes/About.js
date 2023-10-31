@@ -15,6 +15,8 @@ import GitIcon from "../icons/GitIcon";
 import ExpressIcon from "../icons/ExpressIcon";
 import ReactRouterIcon from "../icons/ReactRouterIcon";
 
+import Colyseus from "../../static/colyseus.png"
+
 const About = () => {
   const theme = useTheme();
 
@@ -58,7 +60,7 @@ const About = () => {
             MongoDB <MongoDBIcon />
           </span>
           <span className="skill">
-            Express <ExpressIcon />
+            Express <ExpressIcon isDarkMode={theme.palette.mode === "dark"}/>
           </span>
           <span className="skill">
             Colyseus{" "}
@@ -66,7 +68,7 @@ const About = () => {
               <img
                 with="40"
                 height="40"
-                src="https://avatars.githubusercontent.com/u/28384334?s=200&v=4"
+                src={Colyseus}
                 alt="colyseus icon"
               />
             </span>

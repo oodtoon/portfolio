@@ -56,10 +56,11 @@ const ProjectDescription = (props) => {
         )}
         <br />
       </ul>
-      <button
+      <a
+        href="https://some-guys-chess-website.vercel.app/"
         className="banner"
-        style={{ borderStyle, backgroundImage: `url(${props.img})` }}
-      />
+        style={{ borderStyle, backgroundImage: `url(${props.img})`, color: "transparent" }}
+      >chess-app</a>
     </>
   );
 };

@@ -60,7 +60,7 @@ const Home = () => {
           <div className="author">{quote[1]}</div>
         </Box>
       </Box>
-      <Box class="home-msg">
+      <Box className="home-msg">
         <p>Hi there, stranger! Welcome to my webiste!</p>
         <p>
           If there is one thing I have learned on my journey for learning to
