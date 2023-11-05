@@ -1,19 +1,24 @@
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { useTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "../../App.css";
-import chess from "../../static/testProject.png"
-import vsp from "../../static/VSP.png"
-import script from "../../static/script.png"
-
+import chess from "../../static/testProject.png";
+import vsp from "../../static/VSP.png";
+import script from "../../static/script.png";
+import Link from "@mui/material/Link";
 
 const Projects = () => {
   const theme = useTheme();
   const navigate = useNavigate();
 
-  const borderStyle = {
+  const buttonStyle = {
+    color: "transparent",
     border:
       theme.palette.mode === "dark" ? "solid 3px white" : "solid 3px black",
+    "&:hover": {
+      boxShadow:
+        theme.palette.mode === "dark" ? ".5em .5em #ff4500" : ".5em .5em black",
+    },
   };
 
   const toProject = (link) => {
@@ -23,50 +28,44 @@ const Projects = () => {
   return (
     <>
       <Box className="projects-container">
-        <h1 className="projects-title">My projects</h1>
+        <h1 className="projects-title">My Projects</h1>
         <Box className="projects-grid">
-          <button
-            onClick={() => toProject("/sales")}
-            className="project-item medium"
-            style={{...borderStyle, backgroundImage: `url(${vsp})`}}
-          >
-            Sales
-          </button>
-          <button
+          <Button
             onClick={() => toProject("/chess")}
-            className="project-item large"
-            style={{...borderStyle, backgroundImage: `url(${chess})`}}
+            className="project-item medium"
+            sx={{ ...buttonStyle, backgroundImage: `url(${chess})` }}
           >
             Chess
-          </button>
-          <div
-            onClick={() => toProject("/euchre")}
+          </Button>
+          <Box class="project-title-container medium">
+            <Link className="project-title" color="a.main" href="/chess">
+              Chess
+            </Link>
+          </Box>
+          <Button
+            onClick={() => toProject("/sales")}
             className="project-item medium"
-            style={borderStyle}
+            sx={{ ...buttonStyle, backgroundImage: `url(${vsp})` }}
           >
-            Euchre
-          </div>
-          <div
-            onClick={() => toProject("/snake")}
-            className="project-item small"
-            style={borderStyle}
-          >
-            Snake
-          </div>
-          <div
-            onClick={() => toProject("/scoreboard")}
-            className="project-item tall"
-            style={borderStyle}
-          >
-            Scoreboard
-          </div>
-          <div
+            Sales
+          </Button>
+          <Box className="project-title-container medium">
+            <Link className="project-title" color="a.main" href="/sales">
+              Sales Lead Tracker
+            </Link>
+          </Box>
+          <Button
             onClick={() => toProject("/scriptorganizer")}
-            className="project-item wide"
-            style={{...borderStyle, backgroundImage: `url(${script})`}}
+            className="project-item medium"
+            sx={{ ...buttonStyle, backgroundImage: `url(${script})` }}
           >
             Script Organizer
-          </div>
+          </Button>
+          <Box className="project-title-container medium">
+            <Link className="project-title" color="a.main" href="/chess">
+              Script Organizer
+            </Link>
+          </Box>
         </Box>
       </Box>
     </>

@@ -1,17 +1,27 @@
-import { Box } from "@mui/material"
+import { Box } from "@mui/material";
+import { useTheme } from "@emotion/react";
+import Socials from "./routes/Socials";
+import Links from "./Links";
 
-const date = new Date()
-const year = date.getFullYear()
+const date = new Date();
+const year = date.getFullYear();
 
 const Footer = () => {
-    return (
-        <footer className="footer-container">
-            <Box>
-                Brody portfolio
-                <div>© {year} all rights reserved</div>
-            </Box>
-        </footer>
-    )
-}
+  const colorStyle = {
+    color: "#FFF",
+  };
+  return (
+    <footer className="footer-container">
+      <Box className="footer-content">
+        <Box class="footer-info">
+            Brody Portfolio
+            <div>© {year} all rights reserved</div>
+            <Socials colorStyle={colorStyle} />
+        </Box>
+        <Links />
+      </Box>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;

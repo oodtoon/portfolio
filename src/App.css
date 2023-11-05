@@ -62,13 +62,17 @@ nav a {
   grid-area: about-title;
 }
 
-.about-img {
-  grid-area: about-img;
-}
-
 .about-msg {
   grid-area: about-msg;
+  margin: 0;
 }
+
+/* Resume */
+
+.resume-title {
+  margin: auto;
+ }
+
 
 /* About Skills */
 
@@ -150,11 +154,19 @@ nav a {
 
 /* projects */
 
-.projects-container {
+/* .projects-container-draft {
   display: grid;
   padding: 5% 10% 10% 10%;
   grid-template-rows: 1fr 5fr;
   min-height: 100vh;
+  justify-items: center;
+} */
+
+.projects-container {
+  display: grid;
+  padding: 5% 10% 10% 10%;
+  grid-template-rows: 1fr 5fr;
+  min-height: 80vh;
   justify-items: center;
 }
 
@@ -163,8 +175,24 @@ nav a {
   height: 100%;
   width: 100%;
   grid-template-rows: repeat(6, 1fr);
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* switch to 5 if using mosaic */
   gap: 1em;
+}
+
+.project-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.medium {
+    font-size: x-large;
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+}
+
+.project-title {
+  cursor: pointer;
 }
 
 .project-item {
@@ -201,6 +229,7 @@ nav a {
 }
 
 
+
 /* Challenges */
 
 .challenge {
@@ -215,16 +244,19 @@ nav a {
 /* Project Banners */
 
 .banner {
-  border: 3px black solid;
+  display: block;
   border-radius: 4px;
   width: 100%;
   padding: 6em;
-  margin-bottom: 5em;
-  color: transparent;
-  background-color: #ff4500;
   cursor: pointer;
   background-size: cover;
   background-position-y: center;
+}
+
+/* Link Display */
+
+.link-nav {
+  display: block;
 }
 
 /* Footer */
@@ -234,10 +266,18 @@ footer {
 }
 
 .footer-container {
+  display: flex;
   background-color: black;
   color: white;
   padding: 3rem;
   width: 100%;
 }
 
+
+.footer-content {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1em;
+}
 

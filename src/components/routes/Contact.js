@@ -7,6 +7,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import "../../App.css";
+import Socials from "./Socials";
 
 const Contact = () => {
   const theme = useTheme();
@@ -31,23 +32,7 @@ const Contact = () => {
             <div>email: brocbla@umich.edu</div>
             <div>carrier pigeon: 4742 N Sawyer Ave, Chicago, Il 60625</div>
           </Box>
-          <Box className="socials">
-            <a className="social-link" href="https://github.com/oodtoon">
-              <FontAwesomeIcon icon={faGithub} style={colorStyle} />
-            </a>
-            <a
-              className="social-link"
-              href="https://www.youtube.com/@hobbies2seriously"
-            >
-              <FontAwesomeIcon icon={faYoutube} style={colorStyle} />
-            </a>
-            <a
-              className="social-link"
-              href="https://www.linkedin.com/in/brody-blair-46ab72164"
-            >
-              <FontAwesomeIcon icon={faLinkedin} style={colorStyle} />
-            </a>
-          </Box>
+          <Socials colorStyle={colorStyle}/>
         </Box>
       </Box>
     </>

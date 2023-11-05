@@ -4,6 +4,8 @@ import "../../App.css";
 import TypeScriptIcon from "../icons/TypeScriptIcon";
 import JavaScriptIcon from "../icons/JavaScriptIcon";
 
+import Resume from "../../static/resume.pdf";
+
 import Link from "@mui/material/Link";
 import ReactIcon from "../icons/ReactIcon";
 import SvelteIcon from "../icons/SvelteIcon";
@@ -15,7 +17,7 @@ import GitIcon from "../icons/GitIcon";
 import ExpressIcon from "../icons/ExpressIcon";
 import ReactRouterIcon from "../icons/ReactRouterIcon";
 
-import Colyseus from "../../static/colyseus.png"
+import Colyseus from "../../static/colyseus.png";
 
 const About = () => {
   const theme = useTheme();
@@ -28,12 +30,16 @@ const About = () => {
   return (
     <>
       <Box className="about">
-        <h1 className="about-title">Hi! my name is Brody</h1>
-        <img className="about-img" alt="brody" />
+        <h1 className="about-title">Hello! My name is Brody</h1>
         <p className="about-msg">
           I am a junior web developer with a knack for solving bugs in my code
           riiiight as I'm about to fall asleep.
         </p>
+
+        <h1 className="resume-title">My Resume</h1>
+        <Link sx={{ margin: "0 auto"}} download="Brody_Blair_Resume.pdf" href={Resume} color="a.main">
+          Download Here
+        </Link>
       </Box>
       <Box className="skills-container">
         <h1 className="skilles-title">My tools so far</h1>
@@ -60,17 +66,12 @@ const About = () => {
             MongoDB <MongoDBIcon />
           </span>
           <span className="skill">
-            Express <ExpressIcon isDarkMode={theme.palette.mode === "dark"}/>
+            Express <ExpressIcon isDarkMode={theme.palette.mode === "dark"} />
           </span>
           <span className="skill">
             Colyseus{" "}
             <span>
-              <img
-                with="40"
-                height="40"
-                src={Colyseus}
-                alt="colyseus icon"
-              />
+              <img with="40" height="40" src={Colyseus} alt="colyseus icon" />
             </span>
           </span>
           <span className="skill">
@@ -117,10 +118,16 @@ const About = () => {
             Think you can beat me?{" "}
           </div>
           <div>
-            <span>YouTube</span> - I started a YouTube channel because I thought
-            the world of pool was missing personality. Check out some jokes and
-            even some cool trick shots on my channel! Oh, and please like and
-            subscirbe!
+            <span>YouTube</span> - I started a{" "}
+            <Link
+              color="a.main"
+              href="https://www.youtube.com/channel/UCgsxmRR0n1s1YOAWCfh5_jg"
+            >
+              YouTube channel
+            </Link>{" "}
+            because I thought the world of pool was missing personality. Check
+            out some jokes and even some cool trick shots on my channel! Oh, and
+            please like and subscirbe!
           </div>
         </Box>
       </Box>

@@ -1,14 +1,20 @@
 import { useTheme } from "@emotion/react";
-
+import Link from "@mui/material/Link";
 import ChallengeDescription from "./ChallengeDescription";
 import Line from "./Line";
 
 const ProjectDescription = (props) => {
   const theme = useTheme();
 
-  const borderStyle = {
+  const linkStyle = {
+    color: "transparent",
     border:
       theme.palette.mode === "dark" ? "solid 3px white" : "solid 3px black",
+    "&:hover": {
+      boxShadow:
+        theme.palette.mode === "dark" ? ".5em .5em white" : ".5em .5em black",
+    },
+    marginBottom: "1em"
   };
 
   return (
@@ -56,11 +62,18 @@ const ProjectDescription = (props) => {
         )}
         <br />
       </ul>
-      <a
+
+      <Link
         href="https://some-guys-chess-website.vercel.app/"
         className="banner"
-        style={{ borderStyle, backgroundImage: `url(${props.img})`, color: "transparent" }}
-      >chess-app</a>
+        target="_blank"
+        sx={{
+          ...linkStyle,
+          backgroundImage: `url(${props.img})`,
+        }}
+      >
+        chess-app
+      </Link>
     </>
   );
 };
