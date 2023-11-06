@@ -39,7 +39,7 @@ const Projects = () => {
           </Button>
           <Box class="project-title-container medium">
             <Link className="project-title" color="a.main" href="/chess">
-              Chess
+              Chess Website
             </Link>
           </Box>
           <Button
@@ -62,7 +62,7 @@ const Projects = () => {
             Script Organizer
           </Button>
           <Box className="project-title-container medium">
-            <Link className="project-title" color="a.main" href="/chess">
+            <Link className="project-title" color="a.main" href="/scriptorganizer">
               Script Organizer
             </Link>
           </Box>

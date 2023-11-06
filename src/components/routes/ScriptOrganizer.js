@@ -1,5 +1,5 @@
 import ProjectDescription from "../ProjectDescription";
-import scriptBanner from "../../static/scriptOrgBanner.png"
+import scriptBanner from "../../static/scriptOrgBanner.png";
 
 const introParagraphs = [
   {
@@ -21,15 +21,9 @@ const challenges = [
   {
     title: "Creating Functional Fitlers",
     solution:
-      "Rendering the correct scripts based on filters selected was a challenge with just conditional statements. However, after learning the some() and every() methods on arrays I was able to get the filters to react correctly.",
-    id: 1
-    },
-  {
-    title: "Saving Data To Server",
-    solution:
-      "Since I wasn't saving information to a MongoDB database, I had to make my own IDs for the items. I didn't realize you can't have decimals for IDs but once removing them everything worked perfectly.",
-    id: 2
-    },
+      "Learning new Array methods that I had never used before, such as some() and every(), made it possible for me to the filter scripts based on user preferences correctly.",
+    id: 1,
+  },
 ];
 
 const ScriptOrganizer = () => {
@@ -40,6 +34,7 @@ const ScriptOrganizer = () => {
         introParagraphs={introParagraphs}
         challenges={challenges}
         img={scriptBanner}
+        gitHubLink={"https://github.com/oodtoon/script-organizer"}
       />
     </>
   );

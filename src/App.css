@@ -73,6 +73,15 @@ nav a {
   margin: auto;
  }
 
+ .resume-link {
+  margin: 0 auto;
+  display: flex;
+ }
+
+ .download-svg {
+  margin-left: .2em;
+ }
+
 
 /* About Skills */
 
@@ -181,8 +190,9 @@ nav a {
 
 .project-title-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin-left: 3em;
 
   &.medium {
     font-size: x-large;

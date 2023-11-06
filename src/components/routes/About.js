@@ -18,6 +18,7 @@ import ExpressIcon from "../icons/ExpressIcon";
 import ReactRouterIcon from "../icons/ReactRouterIcon";
 
 import Colyseus from "../../static/colyseus.png";
+import DownloadIcon from "../icons/DownloadIcon";
 
 const About = () => {
   const theme = useTheme();
@@ -37,9 +38,12 @@ const About = () => {
         </p>
 
         <h1 className="resume-title">My Resume</h1>
-        <Link sx={{ margin: "0 auto"}} download="Brody_Blair_Resume.pdf" href={Resume} color="a.main">
-          Download Here
-        </Link>
+        <span className="resume-link">
+          <Link download="Brody_Blair_Resume.pdf" href={Resume} color="a.main">
+            Download Here
+          </Link>
+          <DownloadIcon />
+        </span>
       </Box>
       <Box className="skills-container">
         <h1 className="skilles-title">My tools so far</h1>

@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import { useTheme } from "@emotion/react";
 import Socials from "./routes/Socials";
 import Links from "./Links";
 

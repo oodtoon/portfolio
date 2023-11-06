@@ -14,7 +14,7 @@ const ProjectDescription = (props) => {
       boxShadow:
         theme.palette.mode === "dark" ? ".5em .5em white" : ".5em .5em black",
     },
-    marginBottom: "1em"
+    marginBottom: "1em",
   };
 
   return (
@@ -63,6 +63,8 @@ const ProjectDescription = (props) => {
         <br />
       </ul>
 
+      <h1>Check out {props.title} below:</h1>
+
       <Link
         href="https://some-guys-chess-website.vercel.app/"
         className="banner"
@@ -71,9 +73,16 @@ const ProjectDescription = (props) => {
           ...linkStyle,
           backgroundImage: `url(${props.img})`,
         }}
-      >
-        chess-app
-      </Link>
+      ></Link>
+      <div style={{ marginBottom: "2em" }}>
+        <Link
+          color="a.main"
+          href={props.gitHubLink}
+          target="_blank"    
+        >
+          View {props.title} on GitHub here!
+        </Link>
+      </div>
     </>
   );
 };
