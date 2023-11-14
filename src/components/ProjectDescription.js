@@ -113,12 +113,12 @@ const ProjectDescription = (props) => {
                   {props.title} is currently under construction.{" "}
                   <ConstructionIcon />
                 </p>{" "}
-                <p className="dialog-text">How do you wish to proceed?</p>
+                <p className="dialog-text">Pick your detour!</p>
               </div>
               <div className="dialog-actns">
                 <Button onClick={closeDialog} className="dialog-btn" sx={buttonStyle}>Continue Reading</Button>
                 <Link className="dialog-link" color="a.main" href={props.gitHubLink} target="_blank">{props.title} GitHub</Link>
-                <Link className="dialog-link" color="a.main" href={"/projects"} onClick={closeDialog}>Check Out All Projects</Link>
+                <Link className="dialog-link" color="a.main" href={"/projects"} onClick={closeDialog}>Check Out Other Projects</Link>
               </div>
             </div>
           </dialog>
