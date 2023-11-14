@@ -51,6 +51,7 @@ const Sales = () => {
         challenges={challenges}
         img={sales}
         gitHubLink={"https://github.com/oodtoon/VSP"}
+        isActive={false}
       />
     </>
   );

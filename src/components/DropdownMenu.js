@@ -1,6 +1,6 @@
 import { useTheme } from "@emotion/react";
 import Link from "@mui/material/Link";
-import { Box } from "@mui/material";
+// import { motion } from "framer-motion"
 
 const DropdownMenu = (props) => {
   const theme = useTheme();
@@ -36,12 +36,12 @@ const DropdownMenu = (props) => {
   };
 
   return (
-    <Box className="dropdown">
+    <div className="dropdown">
       <DropdownItem link={"/"}>Home</DropdownItem>
       <DropdownItem link={"/about"}>About</DropdownItem>
       <DropdownItem link={"/contact"}>Contact</DropdownItem>
       <DropdownItem link={"/projects"}>Projects</DropdownItem>
-    </Box>
+    </div>
   );
 };
 

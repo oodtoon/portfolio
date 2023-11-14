@@ -65,6 +65,7 @@ const Chess = () => {
         challenges={challenges}
         img={chess}
         gitHubLink={'https://github.com/oodtoon/chess'}
+        isActive={true}
       />
      
     </>
