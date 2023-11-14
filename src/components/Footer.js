@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="footer-container">
       <Box className="footer-content">
-        <Box class="footer-info">
+        <Box className="footer-info">
             Brody Portfolio
             <div>© {year} all rights reserved</div>
             <Socials colorStyle={colorStyle} />

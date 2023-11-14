@@ -21,6 +21,16 @@ nav a {
   margin-left: auto;
 }
 
+/* Dropdown */
+
+.dropdown {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
 /* Home */
 
 .quote-content {
@@ -55,7 +65,7 @@ nav a {
   margin: 2em;
   justify-content: center;
   grid-template-columns: 1fr 2fr;
-  grid-template-areas: "about-title about-img" "about-msg about-img";
+  grid-template-areas: "about-title" "about-msg";
 }
 
 .about-title {
@@ -71,17 +81,27 @@ nav a {
 
 .resume-title {
   margin: auto;
- }
+}
 
- .resume-link {
+.resume-link {
   margin: 0 auto;
   display: flex;
- }
+}
 
- .download-svg {
-  margin-left: .2em;
- }
+.download-svg {
+  margin-left: 0.2em;
+}
 
+@media (max-width: 480px) {
+  .about {
+    grid-template-columns: auto;
+  }
+
+  .resume-title {
+    margin-top: 1em;
+  }
+
+}
 
 /* About Skills */
 
@@ -99,12 +119,23 @@ nav a {
 }
 
 .skill {
-  margin: .5em;
+  margin: 0.5em;
   align-self: center;
   font-weight: bolder;
   display: flex;
   align-items: center;
-  gap: .2em;
+  gap: 0.2em;
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    grid-template-columns: auto;
+    margin: auto;
+  }
+
+  .skills-title {
+    margin-left: 1em;
+  }
 }
 
 /* About objective */
@@ -122,7 +153,7 @@ nav a {
 }
 
 .interests > div {
-  margin: 1em;
+  margin: 1em 0;
 }
 
 .interests > div > span {
@@ -238,8 +269,6 @@ nav a {
   }
 }
 
-
-
 /* Challenges */
 
 .challenge {
@@ -283,11 +312,9 @@ footer {
   width: 100%;
 }
 
-
 .footer-content {
   margin: auto;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 1em;
 }
-

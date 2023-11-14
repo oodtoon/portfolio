@@ -46,7 +46,7 @@ const About = () => {
         </span>
       </Box>
       <Box className="skills-container">
-        <h1 className="skilles-title">My tools so far</h1>
+        <h1 className="skills-title">My tools so far</h1>
         <Box className="skill-items" style={borderStyle}>
           <span className="skill">
             JavaScript <JavaScriptIcon />

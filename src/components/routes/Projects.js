@@ -37,7 +37,7 @@ const Projects = () => {
           >
             Chess
           </Button>
-          <Box class="project-title-container medium">
+          <Box className="project-title-container medium">
             <Link className="project-title" color="a.main" href="/chess">
               Chess Website
             </Link>

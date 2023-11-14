@@ -1,11 +1,5 @@
 import { Box } from "@mui/system";
 import { useTheme } from "@emotion/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faYoutube,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
 import "../../App.css";
 import Socials from "./Socials";
 
