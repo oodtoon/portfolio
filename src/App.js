@@ -20,7 +20,7 @@ import ScriptOrganizer from "./components/routes/ScriptOrganizer";
 import Euchre from "./components/routes/Euchre";
 import Snake from "./components/routes/Snake";
 import ScoreBoard from "./components/routes/ScoreBoard";
-import Blog from "./components/routes/Blog"
+// import Blog from "./components/routes/Blog"
 // import BlogPage from "./components/BlogPage";
 // import Comics from "./components/routes/Comics"
 import KeyBindings from "./components/routes/KeyBindings";
