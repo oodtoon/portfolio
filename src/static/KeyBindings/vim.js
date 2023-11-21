@@ -117,7 +117,7 @@ export const vimMotionBindings = [
     keys: ["G"],
     sequence: [
       {
-        mainKeys: ["g"],
+        mainKeys: ["G"],
         modifiers: ["shiftKey"],
       },
     ],
@@ -202,7 +202,7 @@ export const vimNormalBindings = [
     keys: ["shift", "P"],
     sequence: [
       {
-        mainKeys: ["p"],
+        mainKeys: ["P"],
         modifiers: ["shiftKey"],
       },
     ],
@@ -224,7 +224,7 @@ export const vimNormalBindings = [
     keys: ["shift", "F"],
     sequence: [
       {
-        mainKeys: ["f"],
+        mainKeys: ["F"],
         modifiers: ["shiftKey"],
       },
     ],
@@ -294,7 +294,7 @@ export const vimInsertBindings = [
     keys: ["shift", "I"],
     sequence: [
       {
-        mainKeys: ["i"],
+        mainKeys: ["I"],
         modifiers: ["shiftKey"],
       },
     ],
@@ -316,7 +316,7 @@ export const vimInsertBindings = [
     keys: ["shift", "A"],
     sequence: [
       {
-        mainKeys: ["i"],
+        mainKeys: ["A"],
         modifiers: ["shiftKey"],
       },
     ],
@@ -339,7 +339,7 @@ export const vimInsertBindings = [
     keys: ["shift", "O"],
     sequence: [
       {
-        mainKeys: ["o"],
+        mainKeys: ["O"],
         modifiers: ["shiftKey"],
       },
     ],
@@ -364,7 +364,7 @@ export const vimVisualBindings = [
     keys: ["shift", "V"],
     sequence: [
       {
-        mainKeys: ["v"],
+        mainKeys: ["V"],
         modifiers: ["shiftKey"],
       },
     ],
@@ -443,7 +443,7 @@ export const vimVisualBindings = [
         modifiers: [],
       },
       {
-        mainKeys: ["b"],
+        mainKeys: ["B"],
         modifiers: ["shiftKey"],
       },
     ],
@@ -488,7 +488,7 @@ export const vimVisualBindings = [
         modifiers: [],
       },
       {
-        mainKeys: ["b"],
+        mainKeys: ["B"],
         modifiers: ["shiftKey"],
       },
     ],
@@ -503,7 +503,7 @@ export const vimVisualBindings = [
         modifiers: [],
       },
       {
-        mainKeys: ["t"],
+        mainKeys: ["T"],
         modifiers: ["shiftKey"],
       },
     ],
@@ -525,7 +525,7 @@ export const vimVisualBindings = [
     keys: ["shift", "U"],
     sequence: [
       {
-        mainKeys: ["u"],
+        mainKeys: ["U"],
         modifiers: ["shiftKey"],
       },
     ],

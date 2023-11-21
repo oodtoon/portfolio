@@ -74,7 +74,6 @@ const Practice = (props) => {
     let outcome = false;
 
     const keyTypeIsActive = (curr) => {
-      console.log(e[curr]);
       return e[curr];
     };
 

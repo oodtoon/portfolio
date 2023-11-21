@@ -75,7 +75,7 @@ export const vsCodeEditingBindings = [
       },
     ],
     result: "delete line",
-    id: 6,
+    id: 7,
   },
 ];
 
