@@ -74,7 +74,7 @@ export const vsCodeEditingBindings = [
         modifiers: ["metaKey", "shiftKey"],
       },
     ],
-    result: "select line above/below",
+    result: "delete line",
     id: 6,
   },
 ];
