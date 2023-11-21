@@ -66,6 +66,17 @@ export const vsCodeEditingBindings = [
     result: "select line above/below",
     id: 6,
   },
+  {
+    keys: ["cmd", "shift", "K"],
+    sequence: [
+      {
+        mainKeys: ["k"],
+        modifiers: ["metaKey", "shiftKey"],
+      },
+    ],
+    result: "select line above/below",
+    id: 6,
+  },
 ];
 
 export const vsCodeCursorBindings = [
