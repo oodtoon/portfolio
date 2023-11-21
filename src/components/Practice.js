@@ -16,29 +16,28 @@ const vsPracticeBindings = [
   ...vsCodeCursorBindings,
   ...vsCodeMultiBindings,
   ...vsCodeNavBindings,
-]
+];
 
 const vimPracticeBindings = [
   ...vimMotionBindings,
   ...vimInsertBindings,
   ...vimNormalBindings,
   ...vimVisualBindings,
-].filter((b) => b.sequence.length <= 1)
+].filter((b) => b.sequence.length <= 1);
 
 const Practice = (props) => {
-  const theme = useTheme()
+  const theme = useTheme();
 
-  const primaryColor = theme.palette.mode === "dark" ? "#FFF" : "#000"
+  const primaryColor = theme.palette.mode === "dark" ? "#FFF" : "#000";
 
   const practiceBorder = {
     border: `3px solid ${primaryColor}`,
     borderRadius: "4px",
-  }
-
+  };
 
   const bindingArray = props.isChecked
     ? vimPracticeBindings
-    : vsPracticeBindings
+    : vsPracticeBindings;
 
   const selectBinding = (arr) => {
     const randomIndex = Math.floor(Math.random() * (arr.length - 1));
@@ -70,7 +69,7 @@ const Practice = (props) => {
   };
 
   const areKeysCorrect = (e, sequence) => {
-    console.log(e)
+    console.log(e);
     let outcome = false;
 
     const keyTypeIsActive = (curr) => {
@@ -87,8 +86,10 @@ const Practice = (props) => {
 
   return (
     <>
-      <Box className="practice-item" sx={{...practiceBorder}}>{randomBinding.result}</Box>
-      <div className="points">Points: {points}</div>
+      <Box className="practice-item" sx={{ ...practiceBorder }}>
+        <div className="points">Points: {points}</div>
+        <div className="result">{randomBinding.result}</div>
+      </Box>
     </>
   );
 };
