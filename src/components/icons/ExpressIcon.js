@@ -1,7 +1,5 @@
 const ExpressIcon = (props) => {
 
-  console.log("result", props.isDarkMode)
-
   const expressFill = props.isDarkMode ? "#FFF" : "#000"
   return (
     <>

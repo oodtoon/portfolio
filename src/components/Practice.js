@@ -69,7 +69,6 @@ const Practice = (props) => {
   };
 
   const areKeysCorrect = (e, sequence) => {
-    console.log(e);
     let outcome = false;
 
     const keyTypeIsActive = (curr) => {
