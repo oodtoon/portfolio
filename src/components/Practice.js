@@ -28,11 +28,21 @@ const vimPracticeBindings = [
 const Practice = (props) => {
   const theme = useTheme();
 
+  const [points, setPoints] = useState(0);
+
+  const [correctAnswerStyle, setCorrectAnswerStyle] = useState(false);
+  const [incorrectAnswerStyle, setIncorrectAnswerStyle] = useState(false);
+
   const primaryColor = theme.palette.mode === "dark" ? "#FFF" : "#000";
 
   const practiceBorder = {
     border: `3px solid ${primaryColor}`,
     borderRadius: "4px",
+    boxShadow: correctAnswerStyle
+    ? '1em 1em green'
+    : incorrectAnswerStyle
+    ? '1em 1em red'
+    : 'none',
   };
 
   const bindingArray = props.isChecked
@@ -47,12 +57,32 @@ const Practice = (props) => {
   const [randomBinding, setRandomBinding] = useState(
     selectBinding(bindingArray)
   );
-  const [points, setPoints] = useState(0);
+
+  const resetAnswerStyles = () => {
+    setTimeout(() => {
+      setCorrectAnswerStyle(false);
+      setIncorrectAnswerStyle(false);
+    }, 1000);
+  };
+
+  const handleCorrectKeyBinding = () => {
+    setPoints((prev) => prev + 1);
+    setRandomBinding(selectBinding(bindingArray));
+    setCorrectAnswerStyle(true)
+    resetAnswerStyles()
+  };
+
+  const handleIncorrectKeyBinding = () => {
+    setIncorrectAnswerStyle(true); 
+    resetAnswerStyles(); 
+  };
 
   useEffect(() => {
     const listener = (event) => {
       if (areKeysCorrect(event, randomBinding.sequence)) {
         handleCorrectKeyBinding();
+      } else {
+        handleIncorrectKeyBinding()
       }
     };
 
@@ -63,10 +93,7 @@ const Practice = (props) => {
     };
   }, [points]);
 
-  const handleCorrectKeyBinding = () => {
-    setPoints((prev) => prev + 1);
-    setRandomBinding(selectBinding(bindingArray));
-  };
+
 
   const areKeysCorrect = (e, sequence) => {
     let outcome = false;

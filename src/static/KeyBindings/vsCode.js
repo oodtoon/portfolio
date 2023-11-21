@@ -91,6 +91,17 @@ export const vsCodeCursorBindings = [
     result: "move cursor over by word",
     id: 1,
   },
+  {
+    keys: ["opt", "shift", "right/left"],
+    sequence: [
+      {
+        mainKeys: ["ArrowRight", "ArrowLeft"],
+        modifiers: ["altKey", "shiftKey"],
+      },
+    ],
+    result: "select by word",
+    id: 2,
+  },
 ];
 
 export const vsCodeMultiBindings = [
