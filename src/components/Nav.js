@@ -8,7 +8,6 @@ import ExitIcon from "./icons/ExitIcon";
 import { useWindowSize } from "@uidotdev/usehooks";
 
 const NavDropdown = (props) => {
-
   return (
     <>
       <Button
@@ -28,7 +27,7 @@ const NavDropdown = (props) => {
 };
 
 const Nav = (props) => {
-  const size = useWindowSize()
+  const size = useWindowSize();
 
   const [openDropdown, setOpenDropdown] = useState(false);
 
@@ -50,6 +49,17 @@ const Nav = (props) => {
         <Toolbar>
           {isFullScreen && (
             <nav>
+              <NavDropdown
+                style={linkColorStyle}
+                openDropdown={openDropdown}
+                handleToggle={handleDisplayToggle}
+              >
+                <DropdownMenu
+                  handleToggle={handleDisplayToggle}
+                  isOpen={openDropdown}
+                  isMobile={false}
+                />
+              </NavDropdown>
               <NavLink
                 to="/"
                 style={({ isActive }) => {
@@ -111,7 +121,11 @@ const Nav = (props) => {
               openDropdown={openDropdown}
               handleToggle={handleDisplayToggle}
             >
-              <DropdownMenu handleToggle={handleDisplayToggle} isOpen={openDropdown}/>
+              <DropdownMenu
+                handleToggle={handleDisplayToggle}
+                isOpen={openDropdown}
+                isMobile={true}
+              />
             </NavDropdown>
           )}
 

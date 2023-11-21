@@ -26,8 +26,16 @@ nav a {
 .dropdown {
   position: absolute;
   top: 75px;
-  left: 0;
+  left: -75px;
   width: 100%;
+  overflow: hidden;
+}
+
+.dropdown-fragment {
+  position: absolute;
+  top: 75px;
+  left: 12px;
+  width: 20%;
   overflow: hidden;
 }
 
@@ -403,7 +411,7 @@ nav a {
   position: relative;
   padding: 0.5em;
   margin: 0.5em;
-  border-color: orange;
+
 }
 
 .binding-key::before {
@@ -415,7 +423,6 @@ nav a {
   bottom: -1px;
   border-radius: 4px;
   border-style: solid;
-  border-width: 2px;
 }
 
 .binding-key::after {
@@ -427,7 +434,6 @@ nav a {
   bottom: -9px;
   border-radius: 4px;
   border-style: solid;
-  border-width: 2px;
 }
 
 .practice-container {
@@ -442,7 +448,7 @@ nav a {
 .practice-item {
   font-size: 20px;
   margin: 10vh auto;
-  border-bottom: 1px dashed black;
+  padding: 2em;
 }
 
 .points {

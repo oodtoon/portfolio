@@ -128,7 +128,23 @@ export const vimMotionBindings = [
     keys: ["v", "i", '"', "/", "("],
     sequence: [
       {
-        mainKeys: ["v", "i", '"', "/", "("],
+        mainKeys: ["v"],
+        modifiers: [],
+      },
+      {
+        mainKeys: ["i"],
+        modifiers: [],
+      },
+      {
+        mainKeys: ['"'],
+        modifiers: [],
+      },
+      {
+        mainKeys: ["/"],
+        modifiers: [],
+      },
+      {
+        mainKeys: ["("],
         modifiers: [],
       },
     ],

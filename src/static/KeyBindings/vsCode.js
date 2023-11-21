@@ -98,7 +98,7 @@ export const vsCodeMultiBindings = [
     keys: ["cmd", "shift", "L"],
     sequence: [
       {
-        mainKeys: ["L"],
+        mainKeys: ["l"],
         modifiers: ["metaKey", "shiftKey"],
       },
     ],
@@ -175,11 +175,11 @@ export const vsCodeNavBindings = [
     id: 4,
   },
   {
-    keys: ["cmd", "+"],
+    keys: ["ctrl", "shift", "-"],
     sequence: [
       {
-        mainKeys: ["+"],
-        modifiers: ["metaKey", "shiftKey"],
+        mainKeys: ["_"],
+        modifiers: ["ctrlKey", "shiftKey"],
       },
     ],
     result: "go to current cursor/page",

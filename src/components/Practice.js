@@ -8,25 +8,37 @@ import { vsCodeEditingBindings } from "../static/KeyBindings/vsCode";
 import { vsCodeCursorBindings } from "../static/KeyBindings/vsCode";
 import { vsCodeMultiBindings } from "../static/KeyBindings/vsCode";
 import { vsCodeNavBindings } from "../static/KeyBindings/vsCode";
+import { Box } from "@mui/material";
+import { useTheme } from "@emotion/react";
+
+const vsPracticeBindings = [
+  ...vsCodeEditingBindings,
+  ...vsCodeCursorBindings,
+  ...vsCodeMultiBindings,
+  ...vsCodeNavBindings,
+]
+
+const vimPracticeBindings = [
+  ...vimMotionBindings,
+  ...vimInsertBindings,
+  ...vimNormalBindings,
+  ...vimVisualBindings,
+].filter((b) => b.sequence.length <= 1)
 
 const Practice = (props) => {
+  const theme = useTheme()
+
+  const primaryColor = theme.palette.mode === "dark" ? "#FFF" : "#000"
+
+  const practiceBorder = {
+    border: `3px solid ${primaryColor}`,
+    borderRadius: "4px",
+  }
+
+
   const bindingArray = props.isChecked
-    ? [
-        ...vimMotionBindings,
-        ...vimInsertBindings,
-        ...vimNormalBindings,
-        ...vimVisualBindings,
-      ]
-    : [
-        ...vsCodeEditingBindings,
-        ...vsCodeCursorBindings,
-        ...vsCodeMultiBindings,
-        ...vsCodeNavBindings,
-      ].filter(
-        (b) =>
-          b.result !== "go to current cursor/page" ||
-          b.result !== "go to prev cursor/page"
-      );
+    ? vimPracticeBindings
+    : vsPracticeBindings
 
   const selectBinding = (arr) => {
     const randomIndex = Math.floor(Math.random() * (arr.length - 1));
@@ -40,10 +52,6 @@ const Practice = (props) => {
 
   useEffect(() => {
     const listener = (event) => {
-      console.log(
-        "keys response",
-        areKeysCorrect(event, randomBinding.sequence)
-      );
       if (areKeysCorrect(event, randomBinding.sequence)) {
         handleCorrectKeyBinding();
       }
@@ -62,6 +70,7 @@ const Practice = (props) => {
   };
 
   const areKeysCorrect = (e, sequence) => {
+    console.log(e)
     let outcome = false;
 
     const keyTypeIsActive = (curr) => {
@@ -79,7 +88,7 @@ const Practice = (props) => {
 
   return (
     <>
-      <div className="practice-item">{randomBinding.result}</div>
+      <Box className="practice-item" sx={{...practiceBorder}}>{randomBinding.result}</Box>
       <div className="points">Points: {points}</div>
     </>
   );

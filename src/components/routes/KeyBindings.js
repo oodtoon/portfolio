@@ -13,18 +13,31 @@ import { vimMotionBindings } from "../../static/KeyBindings/vim";
 import { vimNormalBindings } from "../../static/KeyBindings/vim";
 import { vimInsertBindings } from "../../static/KeyBindings/vim";
 import { vimVisualBindings } from "../../static/KeyBindings/vim";
+import { useTheme } from "@emotion/react";
 
 const KeyItem = (props) => {
+  const theme = useTheme();
+
+  const borderWidth = {
+    display: "inline",
+    "&::before": {
+      borderWidth: theme.palette.mode === "dark" ? "1px" : "2px",
+    },
+    "&::after": {
+      borderWidth: theme.palette.mode === "dark" ? "1px" : "2px",
+    },
+  };
+
   return (
     <div className="binding-line">
       <span>
         {" "}
-        {props.keys.map((key) => (
-          <span className="binding-key">{key}</span>
+        {props.keys.map((char, i) => (
+          <Box className="binding-key" sx={{...borderWidth}} key={i}>{char}</Box>
         ))}
       </span>
 
-      <span class="binding-result">{props.result}</span>
+      <span className="binding-result">{props.result}</span>
     </div>
   );
 };

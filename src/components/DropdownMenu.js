@@ -24,7 +24,6 @@ const DropdownMenu = (props) => {
     textDecoration: "none",
   };
 
-
   const DropdownItem = (props) => {
     return (
       <div>
@@ -36,12 +35,26 @@ const DropdownMenu = (props) => {
   };
 
   return (
-    <div className="dropdown">
-      <DropdownItem link={"/"}>Home</DropdownItem>
-      <DropdownItem link={"/about"}>About</DropdownItem>
-      <DropdownItem link={"/contact"}>Contact</DropdownItem>
-      <DropdownItem link={"/projects"}>Projects</DropdownItem>
-    </div>
+    <>
+      {props.isMobile && (
+        <div className="dropdown">
+          <DropdownItem link={"/"}>Home</DropdownItem>
+          <DropdownItem link={"/about"}>About</DropdownItem>
+          <DropdownItem link={"/contact"}>Contact</DropdownItem>
+          <DropdownItem link={"/projects"}>Projects</DropdownItem>
+          {/* <DropdownItem link={"/key-bindings"}>Key Bindings</DropdownItem>
+      <DropdownItem link={"/blog"}>Blog</DropdownItem>
+      <DropdownItem link={"/comics"}>Comics</DropdownItem> */}
+        </div>
+      )}
+      {!props.isMobile && (
+        <div className="dropdown-fragment">
+          <DropdownItem link={"/key-bindings"}>Key Bindings</DropdownItem>
+          {/* <DropdownItem link={"/blog"}>Blog</DropdownItem>
+          <DropdownItem link={"/comics"}>Comics</DropdownItem> */}
+        </div>
+      )}
+    </>
   );
 };
 
