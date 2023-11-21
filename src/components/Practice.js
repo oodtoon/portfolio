@@ -22,7 +22,11 @@ const Practice = (props) => {
         ...vsCodeCursorBindings,
         ...vsCodeMultiBindings,
         ...vsCodeNavBindings,
-      ];
+      ].filter(
+        (b) =>
+          b.result !== "go to current cursor/page" ||
+          b.result !== "go to prev cursor/page"
+      );
 
   const selectBinding = (arr) => {
     const randomIndex = Math.floor(Math.random() * (arr.length - 1));

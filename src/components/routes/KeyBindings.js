@@ -161,7 +161,11 @@ const KeyBindings = () => {
         {!isChecked && (
           <Box className="binding-section-container">
             <h2>All VS Code Bindings</h2>
-            <Link color="a.main" href="/">
+            <Link
+              color="a.main"
+              href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf"
+              target="_blank"
+            >
               access document here
             </Link>
           </Box>
@@ -170,7 +174,11 @@ const KeyBindings = () => {
         {isChecked && (
           <Box className="binding-section-conatiner">
             <h2>All VIM Bindings</h2>
-            <Link color="a.main" href="/">
+            <Link
+              color="a.main"
+              href="https://www.cs.cmu.edu/~15131/f17/topics/vim/vim-cheatsheet.pdf"
+              target="_blank"
+            >
               access document here
             </Link>
           </Box>

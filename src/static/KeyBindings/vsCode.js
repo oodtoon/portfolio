@@ -156,7 +156,7 @@ export const vsCodeNavBindings = [
     keys: ["cmd", "shift", "O"],
     sequence: [
       {
-        mainKeys: ["O"],
+        mainKeys: ["o"],
         modifiers: ["metaKey", "shiftKey"],
       },
     ],
