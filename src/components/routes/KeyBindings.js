@@ -171,7 +171,7 @@ const KeyBindings = () => {
             )}
           </>
         )}
-        {!isChecked && (
+        {!isChecked && !isPractice &&(
           <Box className="binding-section-container">
             <h2>All VS Code Bindings</h2>
             <Link
@@ -184,7 +184,7 @@ const KeyBindings = () => {
           </Box>
         )}
 
-        {isChecked && (
+        {isChecked && !isPractice && (
           <Box className="binding-section-conatiner">
             <h2>All VIM Bindings</h2>
             <Link
