@@ -9,6 +9,7 @@
 .nav {
   text-align: center;
 }
+
 nav a {
   text-decoration: none;
   display: inline-block;
@@ -26,7 +27,7 @@ nav a {
 .dropdown {
   position: absolute;
   top: 75px;
-  left: -75px;
+  left: 0px;
   width: 100%;
   overflow: hidden;
 }
@@ -331,6 +332,7 @@ nav a {
   margin: auto auto 2em auto;
 }
 
+
 .blog-items {
   display: flex;
   flex-direction: column;
@@ -340,6 +342,25 @@ nav a {
 .blog-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.blog-img {
+  width: 60%;
+  justify-self: center;
+}
+
+.blog-link {
+  align-self: center;
+}
+
+.blog-page-container {
+  margin: 2em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-title {
+  margin: auto;
 }
 
 /* comics */
@@ -443,7 +464,11 @@ nav a {
 }
 
 .practice-item-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: auto;
+
 }
 
 .practice-item {

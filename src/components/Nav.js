@@ -1,7 +1,7 @@
 import { AppBar, Switch, Toolbar, Button } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import "../App.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import DropdownMenu from "./DropdownMenu";
 import MenuIcon from "./icons/MenuIcon";
 import ExitIcon from "./icons/ExitIcon";
@@ -35,6 +35,8 @@ const Nav = (props) => {
     setOpenDropdown((prevDisplay) => !prevDisplay);
   };
 
+  const ref = useRef(null);
+
   const isFullScreen = size.width > 480;
 
   const linkColorStyle = props.isDarkMode ? "#000" : "#FFF";
@@ -55,6 +57,7 @@ const Nav = (props) => {
                 handleToggle={handleDisplayToggle}
               >
                 <DropdownMenu
+                  ref={ref}
                   handleToggle={handleDisplayToggle}
                   isOpen={openDropdown}
                   isMobile={false}
@@ -122,6 +125,7 @@ const Nav = (props) => {
               handleToggle={handleDisplayToggle}
             >
               <DropdownMenu
+                ref={ref}
                 handleToggle={handleDisplayToggle}
                 isOpen={openDropdown}
                 isMobile={true}

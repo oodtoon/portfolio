@@ -20,8 +20,8 @@ import ScriptOrganizer from "./components/routes/ScriptOrganizer";
 import Euchre from "./components/routes/Euchre";
 import Snake from "./components/routes/Snake";
 import ScoreBoard from "./components/routes/ScoreBoard";
-// import Blog from "./components/routes/Blog"
-// import BlogPage from "./components/BlogPage";
+import Blog from "./components/routes/Blog"
+import BlogPage from "./components/BlogPage";
 // import Comics from "./components/routes/Comics"
 import KeyBindings from "./components/routes/KeyBindings";
 
@@ -103,11 +103,10 @@ function App() {
                 <Route path="/projects" element={<Projects />} />
 
                 <Route path="key-bindings" element={<KeyBindings />}/>
-                {/* <Route path="/blog" element={<Blog />}/> */}
-                {/* <Route path="/blog/:id" element={<BlogPage />} /> */}
+                <Route path="/blog" element={<Blog />}/>
+                <Route path="/blog/:id" element={<BlogPage />} />
                 {/* <Route path="/comics" element={<Comics />}/> */}
                 
-
                 <Route path="/chess" element={<Chess />} />
                 <Route path="/sales" element={<Sales />} />
                 <Route path="/scriptorganizer" element={<ScriptOrganizer />} />

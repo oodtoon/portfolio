@@ -33,7 +33,9 @@ const KeyItem = (props) => {
       <span>
         {" "}
         {props.keys.map((char, i) => (
-          <Box className="binding-key" sx={{...borderWidth}} key={i}>{char}</Box>
+          <Box className="binding-key" sx={{ ...borderWidth }} key={i}>
+            {char}
+          </Box>
         ))}
       </span>
 
@@ -171,7 +173,7 @@ const KeyBindings = () => {
             )}
           </>
         )}
-        {!isChecked && !isPractice &&(
+        {!isChecked && !isPractice && (
           <Box className="binding-section-container">
             <h2>All VS Code Bindings</h2>
             <Link
@@ -199,9 +201,11 @@ const KeyBindings = () => {
         {isPractice && (
           <>
             <Box className="practice-container">
-              <h2 className="practice-item-title">
-                Enter Key Binding Combo To Complete The Request
-              </h2>
+              <div className="practice-item-title">
+                <h2>Enter Key Binding Combo To Complete The Request</h2>
+                <div>Practice may not work on PC or mobile</div>
+              </div>
+
               <Practice isChecked={isChecked} />
             </Box>
           </>

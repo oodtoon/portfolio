@@ -1,11 +1,26 @@
 import { useTheme } from "@emotion/react";
 import Link from "@mui/material/Link";
 // import { motion } from "framer-motion"
+import { forwardRef, useEffect } from "react";
 
-const DropdownMenu = (props) => {
+const DropdownMenu = forwardRef((props, ref) => {
   const theme = useTheme();
 
   const closeDropdown = props.handleToggle;
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        closeDropdown();
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
 
   const secondaryColor = theme.palette.mode === "dark" ? "#FFF" : "#000";
   const primaryColor = theme.palette.mode === "dark" ? "#000" : "#FFF";
@@ -37,25 +52,26 @@ const DropdownMenu = (props) => {
   return (
     <>
       {props.isMobile && (
-        <div className="dropdown">
+        <div className="dropdown" ref={ref}>
           <DropdownItem link={"/"}>Home</DropdownItem>
           <DropdownItem link={"/about"}>About</DropdownItem>
           <DropdownItem link={"/contact"}>Contact</DropdownItem>
           <DropdownItem link={"/projects"}>Projects</DropdownItem>
-          {/* <DropdownItem link={"/key-bindings"}>Key Bindings</DropdownItem>
-      <DropdownItem link={"/blog"}>Blog</DropdownItem>
-      <DropdownItem link={"/comics"}>Comics</DropdownItem> */}
+          <DropdownItem link={"/key-bindings"}>Key Bindings</DropdownItem>
+
+          {/* <DropdownItem link={"/blog"}>Blog</DropdownItem>
+      <DropdownItem link={"/comics"}>Comics</DropdownItem>  */}
         </div>
       )}
       {!props.isMobile && (
-        <div className="dropdown-fragment">
+        <div className="dropdown-fragment" ref={ref}>
           <DropdownItem link={"/key-bindings"}>Key Bindings</DropdownItem>
-          {/* <DropdownItem link={"/blog"}>Blog</DropdownItem>
-          <DropdownItem link={"/comics"}>Comics</DropdownItem> */}
+          <DropdownItem link={"/blog"}>Blog</DropdownItem>
+          {/* <DropdownItem link={"/comics"}>Comics</DropdownItem> */}
         </div>
       )}
     </>
   );
-};
+});
 
 export default DropdownMenu;
