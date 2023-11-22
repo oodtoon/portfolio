@@ -58,9 +58,9 @@ const DropdownMenu = forwardRef((props, ref) => {
           <DropdownItem link={"/contact"}>Contact</DropdownItem>
           <DropdownItem link={"/projects"}>Projects</DropdownItem>
           <DropdownItem link={"/key-bindings"}>Key Bindings</DropdownItem>
-
-          {/* <DropdownItem link={"/blog"}>Blog</DropdownItem>
-      <DropdownItem link={"/comics"}>Comics</DropdownItem>  */}
+          <DropdownItem link={"/blog"}>Blog</DropdownItem>
+          
+          {/* <DropdownItem link={"/comics"}>Comics</DropdownItem>  */}
         </div>
       )}
       {!props.isMobile && (
