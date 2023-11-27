@@ -6,6 +6,38 @@ import chess from "../../static/testProject.png";
 import vsp from "../../static/VSP.png";
 import script from "../../static/script.png";
 import Link from "@mui/material/Link";
+import ask from "../../static/AskLogo.png";
+
+const projectsArray = [
+  {
+    title: "Chess",
+    img: chess,
+    link: "/chess",
+    linkTitle: "Chess Website",
+    y: "40%"
+  },
+  {
+    title: "Ask Psychology",
+    img: ask,
+    link: "/askpsychology",
+    linkTitle: "Ask Psychology Website",
+    y: "60%",
+  },
+  {
+    title: "Sales",
+    img: vsp,
+    link: "/sales",
+    linkTitle: "Sales Lead Tracker",
+    y: "40%",
+  },
+  {
+    title: "Script Organizer",
+    img: script,
+    link: "/scriptorganizer",
+    linkTitle: "Script Organizer",
+    y: "40%",
+  },
+];
 
 const Projects = () => {
   const theme = useTheme();
@@ -15,6 +47,7 @@ const Projects = () => {
     color: "transparent",
     border:
       theme.palette.mode === "dark" ? "solid 3px white" : "solid 3px black",
+    backgroundSize: "cover",
     "&:hover": {
       boxShadow:
         theme.palette.mode === "dark" ? ".5em .5em #ff4500" : ".5em .5em black",
@@ -30,41 +63,30 @@ const Projects = () => {
       <Box className="projects-container">
         <h1 className="projects-title">My Projects</h1>
         <Box className="projects-grid">
-          <Button
-            onClick={() => toProject("/chess")}
-            className="project-item medium"
-            sx={{ ...buttonStyle, backgroundImage: `url(${chess})` }}
-          >
-            Chess
-          </Button>
-          <Box className="project-title-container medium">
-            <Link className="project-title" color="a.main" href="/chess">
-              Chess Website
-            </Link>
+          <Box className="item-container">
+            {projectsArray.map((project, i) => (
+              <Button
+                key={i + "b"}
+                onClick={() => toProject(project.link)}
+                className="project-item"
+                sx={{ ...buttonStyle, backgroundImage: `url(${project.img})`, backgroundPositionY: `${project.y}` }}
+              >
+                {project.title}
+              </Button>
+            ))}
           </Box>
-          <Button
-            onClick={() => toProject("/sales")}
-            className="project-item medium"
-            sx={{ ...buttonStyle, backgroundImage: `url(${vsp})` }}
-          >
-            Sales
-          </Button>
-          <Box className="project-title-container medium">
-            <Link className="project-title" color="a.main" href="/sales">
-              Sales Lead Tracker
-            </Link>
-          </Box>
-          <Button
-            onClick={() => toProject("/scriptorganizer")}
-            className="project-item medium"
-            sx={{ ...buttonStyle, backgroundImage: `url(${script})` }}
-          >
-            Script Organizer
-          </Button>
-          <Box className="project-title-container medium">
-            <Link className="project-title" color="a.main" href="/scriptorganizer">
-              Script Organizer
-            </Link>
+          <Box className="project-link-container">
+            {projectsArray.map((project, i) => (
+              <Box className="link-title-container" key={i + "l"}>
+                <Link
+                  className="project-link"
+                  color="a.main"
+                  href={project.link}
+                >
+                  {project.linkTitle}
+                </Link>
+              </Box>
+            ))}
           </Box>
         </Box>
       </Box>

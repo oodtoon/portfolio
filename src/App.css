@@ -69,9 +69,7 @@ nav a {
 
 /* About */
 
-.about {
-  display: grid;
-  margin: 2em;
+.about-title-container {
   justify-content: center;
   grid-template-columns: 1fr 2fr;
   grid-template-areas: "about-title" "about-msg";
@@ -84,6 +82,21 @@ nav a {
 .about-msg {
   grid-area: about-msg;
   margin: 0;
+}
+
+.about-section-container {
+  display: grid;
+  margin: 2em;
+}
+
+.sub-title {
+  font-size: 32px;
+}
+
+@media (max-width: 300px) {
+  .about-section-container {
+    margin: 0;
+  }
 }
 
 /* Resume */
@@ -146,11 +159,22 @@ nav a {
   }
 }
 
-/* About objective */
+/* About Endorsements */
+.endorsement-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
 
-.objective-container {
-  display: grid;
-  margin: 2em;
+.endorsement-container {
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+  margin: auto;
+}
+
+.signer {
+  align-self: flex-end;
 }
 
 /* About interests */
@@ -212,14 +236,6 @@ nav a {
 
 /* projects */
 
-/* .projects-container-draft {
-  display: grid;
-  padding: 5% 10% 10% 10%;
-  grid-template-rows: 1fr 5fr;
-  min-height: 100vh;
-  justify-items: center;
-} */
-
 .projects-container {
   display: grid;
   padding: 5% 10% 10% 10%;
@@ -232,25 +248,42 @@ nav a {
   display: grid;
   height: 100%;
   width: 100%;
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-columns: repeat(4, 1fr); /* switch to 5 if using mosaic */
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr; /* switch to 5 if using mosaic */
+  grid-template-areas: "item link";
   gap: 1em;
 }
 
-.project-title-container {
+.item-container,
+.project-link-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+}
+
+.item-container {
+  grid-area: item;
+}
+
+.link-container {
+  grid-area: link;
+}
+
+.link-title-container,
+.project-item {
+  min-height: 140px;
+}
+
+.link-title-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-left: 3em;
-
-  &.medium {
-    font-size: x-large;
-    grid-row: span 2;
-    grid-column: span 2;
-  }
+  font-size: x-large;
 }
 
-.project-title {
+.project-link {
   cursor: pointer;
 }
 
@@ -259,37 +292,23 @@ nav a {
   justify-content: center;
   align-items: center;
   color: transparent;
-  background-color: #ff4500;
-  border: solid 3px black;
   border-radius: 4px;
   cursor: pointer;
-  background-size: cover;
-  background-position-y: center;
-
-  &.medium {
-    grid-row: span 2;
-    grid-column: span 2;
-  }
-
-  &.large {
-    grid-row: span 3;
-    grid-column: span 3;
-  }
-
-  &.tall {
-    grid-column: 4 / span 2;
-    grid-row: 4 / span 3;
-  }
-
-  &.wide {
-    grid-column: span 3;
-    grid-row: span 2;
-  }
 }
 
 @media (max-width: 480px) {
-  .project-title-container {
+  .projects-container {
+    padding: 0;
+  }
+
+  .link-title-container {
     margin-left: 0;
+    font-size: medium;
+  }
+
+  .link-title-container,
+  .project-item {
+    min-height: 70px;
   }
 }
 
@@ -312,7 +331,6 @@ nav a {
   width: 100%;
   padding: 6em;
   cursor: pointer;
-  background-size: cover;
   background-position-y: center;
 }
 
@@ -331,7 +349,6 @@ nav a {
 .blog-page-title {
   margin: auto auto 2em auto;
 }
-
 
 .blog-items {
   display: flex;
@@ -468,14 +485,12 @@ nav a {
   flex-direction: column;
   align-items: center;
   margin: auto;
-
 }
 
 .practice-item {
   display: flex;
   flex-direction: column;
   margin: 10vh auto;
-
 }
 
 .result {
@@ -485,7 +500,7 @@ nav a {
 
 .points {
   justify-self: flex-start;
-  padding: .5em 0 0 .5em
+  padding: 0.5em 0 0 0.5em;
 }
 
 @media (max-width: 480px) {

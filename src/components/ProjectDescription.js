@@ -17,6 +17,7 @@ const ProjectDescription = (props) => {
         theme.palette.mode === "dark" ? ".5em .5em white" : ".5em .5em black",
     },
     marginBottom: "1em",
+    backgroundSize: props.isRepeat ? "contain" : "cover",
   };
 
   const buttonStyle = {
@@ -86,7 +87,7 @@ const ProjectDescription = (props) => {
 
       {props.isActive && (
         <Link
-          href="https://some-guys-chess-website.vercel.app/"
+          href={props.projectLink}
           className="banner"
           target="_blank"
           sx={{
@@ -96,7 +97,7 @@ const ProjectDescription = (props) => {
         ></Link>
       )}
       {!props.isActive && (
-        <div class="banner-container">
+        <div className="banner-container">
           <Button
             className="banner"
             sx={{

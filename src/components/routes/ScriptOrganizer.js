@@ -34,8 +34,10 @@ const ScriptOrganizer = () => {
         introParagraphs={introParagraphs}
         challenges={challenges}
         img={scriptBanner}
+        projectLink="inactiveLink"
         gitHubLink={"https://github.com/oodtoon/script-organizer"}
         isActive={false}
+        isRepeat={false}
       />
     </>
   );

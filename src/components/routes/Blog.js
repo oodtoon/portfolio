@@ -37,7 +37,7 @@ const Blog = () => {
   return (
     <>
       <Box className="blog-container">
-        <h1 className="blog-page-title">I have opinions</h1>
+        <h1 className="blog-page-title">I Have Opinions</h1>
         <Box className="blog-items">
           {blogs.length === 0 && (
             <h2>Apparently I currently have no opinions</h2>

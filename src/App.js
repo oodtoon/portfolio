@@ -20,8 +20,9 @@ import ScriptOrganizer from "./components/routes/ScriptOrganizer";
 import Euchre from "./components/routes/Euchre";
 import Snake from "./components/routes/Snake";
 import ScoreBoard from "./components/routes/ScoreBoard";
-import Blog from "./components/routes/Blog"
+import Blog from "./components/routes/Blog";
 import BlogPage from "./components/BlogPage";
+import Ask from "./components/routes/Ask";
 // import Comics from "./components/routes/Comics"
 import KeyBindings from "./components/routes/KeyBindings";
 
@@ -56,7 +57,7 @@ function App() {
             root: {
               color: pallete.outlined.contrastText,
               backgroundColor: pallete.outlined.main,
-            }, 
+            },
           },
         },
         MuiButton: {
@@ -102,17 +103,18 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/projects" element={<Projects />} />
 
-                <Route path="key-bindings" element={<KeyBindings />}/>
-                <Route path="/blog" element={<Blog />}/>
+                <Route path="key-bindings" element={<KeyBindings />} />
+                <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:id" element={<BlogPage />} />
                 {/* <Route path="/comics" element={<Comics />}/> */}
-                
+
                 <Route path="/chess" element={<Chess />} />
                 <Route path="/sales" element={<Sales />} />
                 <Route path="/scriptorganizer" element={<ScriptOrganizer />} />
+                <Route path="/askpsychology" element={<Ask />} />
                 <Route path="/euchre" element={<Euchre />} />
-                <Route path="/snake" element={<Snake />}/>
-                <Route path="/scoreboard" element={<ScoreBoard />}/>   
+                <Route path="/snake" element={<Snake />} />
+                <Route path="/scoreboard" element={<ScoreBoard />} />
               </Routes>
             </Container>
             <Footer />

@@ -64,8 +64,10 @@ const Chess = () => {
         introParagraphs={introParagraphs}
         challenges={challenges}
         img={chess}
+        projectLink={"https://some-guys-chess-website.vercel.app/"}
         gitHubLink={'https://github.com/oodtoon/chess'}
         isActive={true}
+        isRepeat={false}
       />
      
     </>

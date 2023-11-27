@@ -50,8 +50,10 @@ const Sales = () => {
         introParagraphs={introParagraphs}
         challenges={challenges}
         img={sales}
+        projectLink="inactiveLink"
         gitHubLink={"https://github.com/oodtoon/VSP"}
         isActive={false}
+        isRepeat={false}
       />
     </>
   );
